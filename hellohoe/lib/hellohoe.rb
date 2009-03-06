@@ -1,9 +1,6 @@
 class HelloHoe
-  VERSION = '0.1'
+  VERSION = '0.2'
    
-  def self.main()
-    puts 'Hello, Hoe!'
-  end
+  # your code here
+  
 end
-
-HelloHoe.main if __FILE__ == $0
