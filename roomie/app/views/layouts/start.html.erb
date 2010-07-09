@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>RoomieNATOR</title>
+    
+    <style>@import "/iui/iui.css";</style>
+    <script src="/iui/iui.js"></script>    
+</head>
+<body>
+    <div class="toolbar">
+        <h1 id="pageTitle"></h1>
+        <a id="backButton" class="button" href="#"></a>
+        <a class="button" href="#searchForm">Search</a>
+    </div>
+
+    <%= yield %>
+
+  <div id="about" title="About" class="panel">
+    <h2>About RoomieNATOR</h2>
+    <p>Sample Mobile Web App using the iUI JavaScript Library w/ Ruby on Rails</p>
+  </div>
+
+  <div id="help" title="Help" class="panel">
+     <h2>Help</h2>
+     <p>Read more...</p>
+  </div>
+
+  <form id="searchForm" class="dialog" action="/posts/search" method="POST">
+        <fieldset>
+            <h1>Search</h1>
+            <a class="button leftButton" type="cancel">Cancel</a>
+            <a class="button blueButton" type="submit">Search</a>
+
+            <label>What:</label>
+            <input type="text" name="query"/>
+        </fieldset>
+   </form>
+    
+</body>
+</html>

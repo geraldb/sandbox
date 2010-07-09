@@ -1,0 +1,35 @@
+post1:
+  user: bob
+  neighbourhood: kits
+  rent:  1410
+  start_date:
+  expiry_date:
+  description: Two Bedroom - 1831 Trafalgar
+
+post2:
+  user: bob
+  neighbourhood: kits
+  rent:  850
+  start_date:
+  expiry_date:
+  description: Studio - Nootka & E. 26th Ave.
+
+post3:
+  user: alice
+  neighbourhood: kits
+  rent:  1550
+  start_date:
+  expiry_date:
+  description:  1 Bedroom - 1679 W. 3rd Avenue
+
+post4:
+  user: alice
+  neighbourhood: yaletown
+  rent: 1425
+  description: Bachelor - 907-1155 Seymour
+
+post5:
+  user: alice
+  neighbourhood: yaletown
+  rent: 1600
+  description: 1 Bedroom - 981 Richards

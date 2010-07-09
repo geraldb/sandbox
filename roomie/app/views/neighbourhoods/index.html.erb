@@ -1,0 +1,7 @@
+
+<ul title="Neighbourhoods">               
+  <% for hood in @neighbourhoods do %>
+     <li><%= link_to hood.name, hood %>
+     <span style='font-size: 8pt;'> <%= hood.area %></span></li>                 
+  <% end %>
+</ul>

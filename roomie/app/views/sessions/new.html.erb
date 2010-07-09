@@ -1,0 +1,16 @@
+
+<form title="Login" class="panel" action="<%= sessions_path %>" method="POST">
+        <h2>Welcome to RoomieNATOR</h2>
+
+        <fieldset>
+            <div class="row">
+                <label>Name</label>
+                <input type="text" name="login" value="<%= params[:login] %>" />
+            </div>
+            <div class="row">
+                <label>Password</label>
+                <input type="password" name="password" value="<%= params[:password] %>" />
+            </div>
+        </fieldset>
+        <a class="whiteButton" type="submit" href="#">Login</a>
+</form>

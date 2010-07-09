@@ -1,0 +1,26 @@
+
+<form title="Sign up" class="panel" action="<%= users_path %>" method="POST">
+        <h2>Welcome to RoomieNATOR</h2>
+
+        <%= error_messages_for :user %>
+
+        <fieldset>
+            <div class="row">
+                <label>Name</label>
+                <input type="text" name="user[login]" value="" />
+            </div>
+            <div class="row">
+                <label>Email</label>
+                <input type="text" name="user[email]" value="" />
+            </div>
+            <div class="row">
+                <label>Password</label>
+                <input type="password" name="user[password]" value="" />
+            </div>
+            <div class="row">
+                <label>Confirm</label>
+                <input type="password" name="user[password_confirmation]" value="" />
+            </div>
+        </fieldset>
+        <a class="whiteButton" type="submit" href="#">Sign up</a>
+</form>

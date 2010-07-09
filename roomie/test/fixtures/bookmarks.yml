@@ -1,0 +1,20 @@
+b1:
+  user: bob
+  post: post1
+  note: Bob's Note
+
+b2:
+  user: bob
+  post: post2
+  note: Bob's Note 2
+
+b3:
+  user: alice
+  post: post3
+  note: Alice's Note
+
+b4:
+  user: alice
+  post: post4
+  note: Alice's Note 2
+

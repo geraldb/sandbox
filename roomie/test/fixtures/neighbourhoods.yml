@@ -1,0 +1,12 @@
+kits:
+  name: Kitsilano
+  area: Westside
+yaletown:
+  name: Yaletown
+  area: Downtown
+drive:
+  name: Commercial Drive
+  area: Eastside
+mt_pleasant:
+  name: Mount Pleasant
+  area: Eastside
