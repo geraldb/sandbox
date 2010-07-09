@@ -1,0 +1,12 @@
+<fb:header decoration="add_border" icon="false">
+   The world wants to...
+</fb:header>
+  
+ <%@notes.each do |note| %>
+   <p style="padding-left: 20px">
+    <fb:profile-pic uid="<%= note.fb_user_id %>"  />
+     <b><%= link_to h(note.title), :controller => 'notes', :action => 'show', :id => note %></b>
+        - <%= time_ago_in_words(note.created_at)  %>  ago
+        by <b><fb:name uid="<%= note.fb_user_id %>" ifcantsee="anonymous" /></b> 
+   </p>    
+ <%end%>

@@ -1,0 +1,22 @@
+<fb:header decoration="add_border" icon="false">
+     Add New Goal
+  </fb:header>
+ 
+   <%unless @note.errors.blank? %>
+      <fb:error>
+        <fb:message>
+           <%= error_messages_for :note %>
+        </fb:message>
+      </fb:error>
+    <%end%>
+
+    <div style='padding-left: 20px; padding-bottom: 10px'> 
+
+    <% form_for :note, :url => { :action => 'create' }  do |f| %>
+      
+       <%= render :partial => "form", :locals => { :f => f } %> 
+       <%= submit_tag "Save" %>
+              
+     <% end %>
+      
+  </div>

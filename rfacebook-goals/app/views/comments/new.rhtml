@@ -1,0 +1,28 @@
+ <fb:header decoration="add_border" icon="false">
+    Post comment for '<%= @comment.note.title %>'
+ </fb:header>
+ 
+  <%unless @comment.errors.blank?%>
+      <fb:error>
+        <fb:message>
+           <%= error_messages_for :comment %>
+        </fb:message>
+      </fb:error>
+    <% end %>
+
+  <div style='padding-left: 20px; padding-bottom: 10px'> 
+
+  <% form_for :comment, :url => { :action => 'create'}  do |f| %>
+   
+    <p>
+          <label for="comment_body">Comment:</label><br/>
+           <%= f.text_area :body, :cols => 115, :rows => 10 %> 
+    </p>
+    
+    <%= submit_tag "Post Comment" %> 
+    
+    <%= f.hidden_field :note_id, :value => @comment.note_id %>
+    <%= f.hidden_field :fb_user_id, :value => @current_fb_user_id %>
+  <% end %>
+
+  </div>

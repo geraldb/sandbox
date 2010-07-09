@@ -1,0 +1,12 @@
+   <p>      
+        <label for='note_title'>I want to:</label>
+        <%= f.text_field :title, :size => 50 %>                
+     </p>
+
+     <p>
+        <label for='note_body'>Comment:</label><br/>
+        <%= f.text_area :body, :cols => 115, :rows => 10  %>
+     </p>
+    
+  <%= f.hidden_field :fb_user_id, :value => @current_fb_user_id %>
+    

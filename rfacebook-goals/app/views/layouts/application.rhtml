@@ -1,0 +1,21 @@
+<fb:dashboard>
+   <fb:create-button href="<%= url_for(:controller => 'notes', :action => "new", :only_path => true) %>">
+       Add a New Goal
+    </fb:create-button>    
+</fb:dashboard>
+
+<fb:tabs>
+  <fb:tab_item 
+      href="<%= url_for(:controller => 'notes', :action => "index", :only_path => true) %>" 
+      title="All Goals" />
+</fb:tabs>
+
+
+<% if flash[:notice] %>
+  <fb:success>
+     <fb:message><%= flash[:notice] %></fb:message>
+  </fb:success>
+<% end %>
+
+<%= yield  %>
+    

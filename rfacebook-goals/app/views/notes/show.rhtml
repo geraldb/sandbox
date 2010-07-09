@@ -1,0 +1,37 @@
+
+<fb:header decoration="add_border" icon="false">
+   <%=h @note.title %>
+</fb:header>
+
+<div style='padding-left: 20px; padding-bottom: 10px'> 
+
+ <p>
+   <fb:profile-pic uid="<%= @note.fb_user_id %>" size="normal" /> 
+         
+         <%=h @note.body %>
+         
+         - <%= time_ago_in_words(@note.created_at)  %> ago 
+         by <b><fb:name uid="<%= @note.fb_user_id %>" ifcantsee="anonymous" /></b>      
+                 
+  </p>
+
+    <b><%=pluralize(@note.comments.size, 'Comment')%></b>
+     | <%= link_to 'Post a Comment', :controller => 'comments', :action => 'new', :note_id => @note %>
+      
+    <% @note.comments.each do |comment| %>
+       <p>
+                <fb:profile-pic uid="<%= comment.fb_user_id %>" />
+                 <%= comment.body %>
+                   -  <%= time_ago_in_words(comment.created_at)  %>  ago 
+                   by <b><fb:name uid="<%= comment.fb_user_id %>" ifcantsee="anonymous" /></b> 
+         
+       </p>
+      <%end %>
+  
+    <br/>
+  
+<% is_my_note? @note do %>
+    <%= link_to 'Edit', :action => 'edit', :id => @note %> 
+<% end %>
+  
+</div>    

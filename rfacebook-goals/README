@@ -1,0 +1,14 @@
+== Welcome to Goals
+
+Goals is a sample Facebook social web application using Ruby on Rails 
+  and the rfacebook gem and plugin.
+
+Note, that you will need to use your own Facebook API key and secret and
+you will need to use your own database user and password.
+
+Note, also that you will also need to install the rfacebook gem and plugin.
+
+Any questions or comments? Send them along to the Facebook for Ruby mailing list/
+forum using the Google Group service @ http://groups.google.com/group/rfacebook
+
+Cheers.
