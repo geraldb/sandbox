@@ -1,0 +1,31 @@
+<h1>Add an Event: Step 2 of 2</h1>
+<h2><span style='color: silver'>1. Create your event listing,</span>
+  2. Review your event listing</h2>
+
+<%= link_to '&laquo; Back', :action => 'new' %> 
+
+<p>  
+  This is what your event listing will look like:
+</p>
+
+  <div style='background-color: silver; padding: 5px 10px 5px 10px;'>
+    <%= render :partial => 'event', :locals => { :event => @event } %>
+  </div>
+  
+  <br>
+  
+  <% form_for :event, @event, :url => { :action => 'create' } do |f| %>
+
+     <%= f.hidden_field :title %>   
+     <%= f.hidden_field :venue %>
+     <%= f.hidden_field :address %>
+     <%= f.hidden_field :occurs_on %>
+     <%= f.hidden_field :start_time %>
+     <%= f.hidden_field :desc %> 
+     <%= f.hidden_field :web %>     
+ 
+     <%= submit_tag 'Yes, Post It' %>  <%= link_to '&laquo; Back', :action => 'new' %>  
+  
+  <% end %>
+  
+  <%= debug( params ) %>

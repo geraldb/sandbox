@@ -1,0 +1,24 @@
+
+    <tr>
+      <td align='right'>Name</td>
+      <td><%= f.text_field :name, :size => 50 %></td>
+    </tr>
+    
+    <tr>
+      <td align='right'>Category</td>
+      <td>
+        <%= select :group, :gcategory_id, Gcategory::NAMES_IDS %>
+      </td>
+    </tr>
+ 
+     <tr>
+       <td align='right'>Tags </td>
+       <td><%= f.text_field :tag_list, :size => 50 %></td>
+     </tr>
+ 
+     <tr>
+       <td align='right' valign='top'>Description</td>
+       <td> <%= f.text_area  :desc, :size => '50x8' %>
+       </td>
+     </tr>
+     

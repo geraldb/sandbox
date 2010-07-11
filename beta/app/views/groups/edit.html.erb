@@ -1,0 +1,24 @@
+
+<h1>Edit Group</h1>
+
+  <%= error_messages_for 'group' %>
+ 
+  <% form_for :group, @group, :url => { :action => 'update', :id => @group } do |f| %>
+
+   <table>
+
+   <%= render :partial => 'form', :locals => { :f => f } %>
+
+     <tr>
+       <td></td>
+       <td><%= submit_tag 'Save Changes' %>
+          or <%= link_to 'Cancel', :action => 'index' %>
+       </td>
+      </tr>
+ 
+    </table>
+  
+  <% end %>
+  
+  <%= render :partial => 'edit_services' %>
+ 

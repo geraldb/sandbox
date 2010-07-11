@@ -1,0 +1,39 @@
+
+<div id='services'>
+  
+<h2>Services</h2>
+      
+      <ul>
+      <% @group.services.each_with_index do |service, i| %>
+         <li>[<%= i %>]  <%= service.scategory.name %> : <%= service.link %></li>
+      <% end %>
+      </ul>
+      
+        <div id='add_service_form' style='background: silver'>
+          
+          <div>
+            <%= error_messages_for 'service' %>
+          </div>
+          
+          
+          Service:
+          
+          <%= select :service, :scategory_id, Scategory::NAMES_IDS %>
+           <br>
+          Link: <%= text_field :service, :link %><br>
+          
+          <%= submit_to_remote 'service_submit', 'Add Service',
+                 :url => { :action => 'add_service', :id => @group },
+                 :with => "Form.serialize('add_service_form')" %>
+           
+           or <%= link_to_function 'Close', "Element.toggle( 'add_service_form' ); Element.toggle( 'add_service' )" %>
+                  
+        </div>
+     
+       <div id='add_service' style='display: none;'>
+        <%= link_to_function 'Add Service', "Element.toggle( 'add_service' ); Element.toggle( 'add_service_form' ) " %>
+       </div>
+
+</div>
+       
+       

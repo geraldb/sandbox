@@ -1,0 +1,35 @@
+  <tr>
+      <td align='right' valign='top'>Title</td>
+      <td><%= f.text_field :title, :size => 60 %><br>
+           <span style='color: grey'>Example: Vancouver.rb Open Ruby Hack Night</span>
+       </td>
+      </tr>   
+    <tr>
+       <td align='right' valign='top'>Venue</td>
+       <td><%= f.text_field :venue, :size => 60 %><br>
+           <span style='color: grey'>Example: Harbour Centre or The Railway Club</span>
+       </td>
+    </tr>
+    <tr>
+       <td align='right'>Address</td>
+       <td><%= f.text_field :address, :size => 60 %>
+       </td>
+    </tr>    
+    <tr>
+       <td align='right'>When</td> 
+       <td><%= date_select :event, :occurs_on %>
+            Start Time 
+           <%= time_select :event, :start_time, {:minute_step => 5} %>
+       </td>
+    </tr>
+     <tr>
+       <td align='right' valign='top'>Description</td>
+       <td> <%= f.text_area  :desc, :size => '80x20' %>
+       </td>
+     </tr>
+     <tr>
+       <td align='right' valign='top'>Web</td>
+       <td><%= f.text_field :web, :size => 50 %><br>
+           <span style='color: grey'>Example: yoursite.com</span>
+       </td>
+    </tr>     

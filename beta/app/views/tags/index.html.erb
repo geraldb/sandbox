@@ -1,0 +1,6 @@
+<h1><%= page_title %></h1>
+
+<% tag_cloud @tags, %w(cloud1 cloud2 cloud3 cloud4) do |tag, css_class| %>
+    <%= link_to tag.name, tag_path( :tag => tag.name), :class => css_class %>
+<% end %>
+  

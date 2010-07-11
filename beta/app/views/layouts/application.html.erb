@@ -1,0 +1,52 @@
+<html>
+  <head>
+     <title>Vancouver Job &amp; Gigs Board - <%= h page_title %></title>
+     <%= javascript_include_tag :defaults %>
+     
+     <style>
+        a, a:visited { color: black }
+        body { font-family:  Verdana, Geneva, Arial, Helvetica, sans-serif; }
+        .flash_notice {
+          border: 2px dotted #185771;
+          padding: 6px;
+          margin: 0 10px;
+          text-align: center;
+          width: auto;
+          background: #1f90bf;
+          color: #fff;
+      }
+      div.errorExplanation { border: 1px solid black; background-color: red; padding: 5px 10px 5px 10px;}
+      
+      div.fieldWithErrors { display: inline; }
+      .fieldWithErrors input, .fieldWithErrors select, .fieldWithErrors textarea {
+           background-color: yellow;
+      }
+      
+      .cloud1 { font-size: 1.0em; }
+      .cloud2 { font-size: 1.2em; }
+      .cloud3 { font-size: 1.4em; }
+      .cloud4 { font-size: 1.6em; }
+
+     </style>
+  </head>
+  <body>
+        
+    <%= render :partial => 'layouts/flash', :locals => { :flash => flash } %>
+        
+    <%= yield %>
+    
+    <hr>
+    
+    <p style='font-size: 75%'>
+      <b>Go to</b>:
+       <%= link_to 'All Vancouver Jobs & Gigs', :controller => 'jobs' %>,
+       <%= link_to 'Upcoming Vancouver Jobs & Gigs (In Moderation Queue)',
+             :controller => 'jobs', :action => 'upcoming' %>,
+       <%= link_to 'All Vancouver Tech & Media Groups & Organizations',
+             :controller => 'groups', :action => 'index' %>, 
+       <a href='http://vanajax.com'>Vancouver Ajax &amp; Web 2.0 Developer Group</a>,
+       <a href='http://groovyvan.com'>Vancouver Groovy &amp; Grails Developer Group</a>,
+       <a href='http://vanrb.com'>Vancouver Ruby &amp; Rails Developer Group (Vancouver.rb)</a>
+    </p>   
+  </body>
+</html>

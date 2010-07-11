@@ -1,0 +1,21 @@
+<h1>Edit Event</h1>
+
+  <%= error_messages_for 'event' %>
+
+ 
+  <% form_for :event, @event, :url => { :action => 'update', :id => @event } do |f| %>
+
+   <table>
+
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+     <tr>
+       <td></td>
+       <td><%= submit_tag 'Save Changes' %>
+         <%= link_to 'Cancel', events_path %>
+       </td>
+      </tr>
+ 
+    </table>
+  
+  <% end %>

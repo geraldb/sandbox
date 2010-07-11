@@ -1,0 +1,59 @@
+<h1>Joint Vancouver Job &amp Gigs Board</h1>
+
+<% if params[:action] == 'upcoming' %>
+<p>
+   Upcoming jobs &amp; gigs in moderation queue:
+</p>
+<% else %>
+<p>
+ The Joint Vancouver Job &amp; Gig Posting Board welcomes job/gig postings
+  
+ by principals <b>(no recruiting agencies, please)</b>
+  for positions or contracts <b>in the Greater Vancouver Region only</b>
+  for the Vancouver Ajax &amp; Web 2.0 Developer Group,
+  the Vancouver Facebook &amp; Social Network Developer Group,
+  the Vancouver Groovy &amp Grails Developer Group,
+  and the Vancouver Ruby &amp; Rails Developer Group.
+</p>
+
+<p>
+Please note that your job/gig postings will
+ get published to our member sites automatically thanks to web feeds
+ - helping you reach a wider audience.
+</p>
+<% end %>
+
+<p align='right'>
+   <b style='background-color: yellow'><%= link_to 'Add a Job Posting', :action => 'new' %></b>
+</p>
+  
+<table>
+    
+<% @posts.each do |post| %>
+
+ <tr>
+  <td>
+     <b><%= link_to "#{h(post.title)} @ #{h(post.company)}",
+             job_path( :permalink => post.to_permalink ) %>
+     </b>     
+  </td>
+  
+  <td> <%=  post.category.name if post.category %> </td>
+  <td> <%=  post.job_types.join( ' &middot; ' ) %> </td>
+  <td> <%= time_ago_in_words post.created_at %> ago </td>
+<% if is_admin? %>
+  <td>
+      <% if post.published %>
+       <%= link_to '[Unpublish]', :action => 'unpublish', :id => post %>      
+      <% else %>
+       <%= link_to '[Publish]', :action => 'publish', :id => post %> 
+      <% end %> 
+       <%= link_to '[Edit]', :action => 'edit', :id => post %>
+       <%= link_to '[X]',  :action => 'delete',  :id => post %>
+  </td>
+<% end %>
+ </tr>
+
+<% end %>
+
+</table>

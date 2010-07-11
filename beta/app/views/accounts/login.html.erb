@@ -1,0 +1,14 @@
+<h1><%= page_title %></h1>
+
+<% form_tag auth_accounts_path, :method => 'get' do %>
+   <table>
+     <tr>
+      <td>Passphrase</td>
+      <td><%= password_field_tag 'pass' %></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td><%= submit_tag 'Sign In' %></td>
+    </tr>
+    </table>
+<% end %>

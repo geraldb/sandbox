@@ -1,0 +1,23 @@
+
+<h1>Add a Group</h1>
+
+  <%= error_messages_for 'group' %>
+ 
+  <% form_for :group, @group, :url => { :action => 'create' } do |f| %>
+
+   <table>
+
+   <%= render :partial => 'form', :locals => { :f => f } %>
+
+     <tr>
+       <td></td>
+       <td><%= submit_tag 'Yes, add group' %>
+          or <%= link_to 'Cancel', :action => 'index' %>
+       </td>
+      </tr>
+ 
+    </table>
+  
+  <% end %>
+  
+ 

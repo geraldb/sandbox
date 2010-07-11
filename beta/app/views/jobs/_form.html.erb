@@ -1,0 +1,42 @@
+
+    <tr>
+      <td align='right'>Company</td>
+      <td><%= f.text_field :company, :size => 50 %></td>
+    </tr>
+    <tr>
+       <td align='right' valign='top'>Web</td>
+       <td><%= f.text_field :web, :size => 50 %><br>
+           <span style='color: grey'>Example: yoursite.com</span>
+       </td>
+    </tr>
+    <tr>
+       <td align='right' valign='top'>Title</td>
+       <td><%= f.text_field :title, :size => 50 %><br>
+           <span style='color: grey'>Example: Ruby Developer or Web Designer</span>
+       </td>
+    </tr>
+    <tr>
+      <td align='right'>Category</td>
+      <td>
+        <%= select :post, :category_id, Category::NAMES_IDS %>
+      </td>
+    </tr>
+     <tr>
+       <td></td>
+       <td>    <%= f.check_box  :full_time %> Full Time
+               <%= f.check_box  :part_time %> Part Time
+               <%= f.check_box  :contract %>  Contract  
+       </td>
+     </tr>
+     <tr>
+       <td align='right' valign='top'>Description</td>
+       <td> <%= f.text_area  :desc, :size => '80x20' %>
+       </td>
+     </tr>
+     <tr>
+        <td align='right' valign='top'>How to Apply</td>
+        <td><%= f.text_field :contact, :size => 50 %> <br>
+          <span style='color: grey'>Example: Send a resume to joe@yoursite.com</span>
+        </td>
+      </tr>
+

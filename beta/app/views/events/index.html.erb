@@ -1,0 +1,30 @@
+<h1>All Events</h1>
+
+<p align='right'>
+   <b style='background-color: yellow'><%= link_to 'Add an Event', :action => 'new' %></b>
+</p>
+  
+<table>
+    
+<% @events.each do |event| %>
+
+ <tr>
+  <td>
+    <%= event.occurs_on.strftime('%a, %b/%d') %>
+  </td>
+  <td>
+     <b><%= link_to "#{h(event.title)} @ #{h(event.venue)}",
+             event_path( :permalink => event.to_permalink ) %>
+     </b>     
+  </td>
+  
+  <td> <%= time_ago_in_words event.created_at %> ago </td>
+  <td>
+       <%= link_to '[Edit]', :action => 'edit', :id => event %> 
+       <%= link_to '[X]',    :action => 'delete',  :id => event %>
+  </td>
+ </tr>
+
+<% end %>
+
+</table>

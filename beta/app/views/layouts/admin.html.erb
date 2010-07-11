@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Administration</title>
+    
+    	<%= javascript_include_tag :defaults %>
+	    <%= active_scaffold_includes %>
+
+  </head>
+  <body>
+    
+    <h1>Administration</h1>
+    
+    <p>
+      <%= link_to 'Groups', :controller => 'admin/groups' %> |
+      <%= link_to 'Services', :controller => 'admin/services' %> |
+      <%= link_to 'Categories (Services)', :controller => 'admin/scategories' %> |
+      <%= link_to 'Categories (Groups)', :controller => 'admin/gcategories' %> 
+    
+ 		<% if flash[:notice] %>
+  		<p><%= flash[:notice] %></p>
+		<% end %>
+     
+    <%= yield %>
+
+    <hr>
+
+		<p>Your IP: <%= request.remote_ip %><br>
+		   Your Browser: <%= request.env["HTTP_USER_AGENT"] %><br>
+		   Your Language: <%= request.env["HTTP_ACCEPT_LANGUAGE"] %>
+		</p>
+
+  </body>
+</html>

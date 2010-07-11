@@ -1,0 +1,56 @@
+<h1><%= page_title %></h1>
+
+<% if is_admin? %>
+  <p align='right'>
+    <b style='background-color: yellow'><%= link_to 'Add a Group', :action => 'new' %></b>
+  </p>
+<% end %>
+
+<h2>Intro</h2>
+
+<p>
+The Vancouver Tech &amp; Media Groups &amp; Organizations directory
+lists groups and organizations
+ from in and around Vancouver, British Columbia (B.C.) in Canada
+  in the development, design, quality assurance, methodology, computer,
+  communication and demo &amp unconferences categories.
+</p>
+
+<p>
+If your tech or media group or organization is not listed,
+please send an introduction to the 
+<a href="http://forum.vanbeta.com">forum/mailing list</a> 
+first telling us more and introducing your group to get it added to the list.
+Thanks!
+</p>
+
+<% current_gcategory_id = -1; @groups.each do |group| %>
+
+  <% if current_gcategory_id == -1 || current_gcategory_id != group.gcategory_id %>
+    <h2><%= group.gcategory.name %></h2>
+  <% end %>
+  <% current_gcategory_id = group.gcategory_id %>
+
+<p>
+   <% if is_admin? %>
+     <%= link_to group.name, :action => 'show', :id => group %>
+   <% else %>
+     <%= group.name %>
+   <% end %>
+   
+   <% group.services.find( :all, :order => 'id desc').each do |service| %>
+      <%= link_to "[#{service.scategory.name}]", "http://#{service.link}" %>
+   <% end %>
+   
+   <% if is_admin? %>
+     <%= link_to '[Edit]', :action => 'edit', :id => group %>
+   <% end %>
+ 
+  <!--  
+   <% group.tags.each do |tag| %>
+       <%= link_to tag.name, tag_path( :tag => tag.name) %>
+   <% end %>
+   -->
+</p>
+
+<% end %>

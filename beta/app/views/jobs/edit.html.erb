@@ -1,0 +1,21 @@
+<h1>Edit Job Posting</h1>
+
+  <%= error_messages_for 'post' %>
+
+ 
+  <% form_for :post, @post, :url => { :action => 'update', :id => @post } do |f| %>
+
+   <table>
+
+   <%= render :partial => 'form', :locals => { :f => f } %>
+
+     <tr>
+       <td></td>
+       <td><%= submit_tag 'Save Changes' %>
+         or  <%= link_to 'Cancel', jobs_path %>
+       </td>
+      </tr>
+ 
+    </table>
+  
+  <% end %>

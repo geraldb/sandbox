@@ -1,0 +1,20 @@
+<h1>Add a Job Posting: Step 1 of 2</h1>
+
+  <%= error_messages_for 'post' %>
+
+<h2>1. Create your ad, <span style='color: silver'>2. Review your ad</span></h2>
+ 
+  <% form_for :post, @post, :url => { :action => 'preview' } do |f| %>
+
+   <table>
+
+   <%= render :partial => 'form', :locals => { :f => f } %>
+
+     <tr>
+       <td></td>
+       <td><%= submit_tag 'Go to Step 2: Preview &raquo;' %></td>
+      </tr>
+ 
+    </table>
+  
+  <% end %>

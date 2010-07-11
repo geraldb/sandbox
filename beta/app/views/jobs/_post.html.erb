@@ -1,0 +1,14 @@
+
+<h1><%= h post.title %> @ <%= h post.company %></h1> 
+
+<p>
+<b><%= post.category.name %>  <%=  post.job_types.join( ' &middot; ' ) %></b> <br> 
+  
+<b>Web: </b> <%= h post.web %>
+</p>
+  
+<%= sanitize( markdown( post.desc )) %> 
+
+<p>
+<b>To apply:</b> <%= h post.contact %>
+</p>

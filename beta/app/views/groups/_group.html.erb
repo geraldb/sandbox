@@ -1,0 +1,15 @@
+
+<h1><%= h group.name %></h1> 
+
+<p>Category: <%= group.gcategory.name %></p>
+
+<p>Tags:
+     <%= "(#{group.tag_list})" %>
+
+  <% group.tags.each do |tag| %>
+       <%= link_to tag.name, tag_path( :tag => tag.name) %>
+  <% end %>
+
+</p>
+  
+<%= sanitize( markdown( group.desc )) %> 
