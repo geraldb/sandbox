@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fetch example</title>
+  <body>
+    <div id="widget"></div>
+  </body>
+  <script>
+
+
+     // var url = 'https://raw.githubusercontent.com/openfootball/football.json/master/2017-18/at.1.json';
+     var url = 'https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.json';
+    fetch( url )
+    .then( (resp) => resp.json() )
+    .then( function( json ) {
+      console.log(json);
+
+      var html = build_widget( json );
+      console.log( html );
+
+      var widget = document.getElementById('widget');
+      widget.innerHTML = html;
+    })
+    .catch(function(err) { console.log(err); });
+
+
+
+
+
+  function build_widget( data ) {
+
+  var html = "";
+  html += `<h2>${ data.name }</h2>`;
+
+  for(var round of data.rounds) {
+    html += `<h3>${ round.name }</h3>`;
+
+    for(var match of round.matches) {
+      html += `<p>
+        #${ match.num }
+        ${ match.date }
+        ${ match.team1.name }
+             vs
+        ${ match.team2.name } / ${ match.group }
+        @ ${ match.city }
+        </p>`;
+     }
+  }
+
+ return html;
+}
+
+  </script>
+</html>
