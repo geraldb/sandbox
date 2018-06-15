@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fetch example</title>
+<body>
+
+    <div id="widget"></div>
+
+  </body>
+  <script src="https://mozilla.github.io/nunjucks/files/nunjucks.js"></script>
+  <script>
+
+    // var url = 'https://raw.githubusercontent.com/openfootball/football.json/master/2017-18/at.1.json';
+    var url = 'https://raw.githubusercontent.com/openfootball/world-cup.json/master/2018/worldcup.json';
+
+    fetch( url )
+    .then( (resp) => resp.json() )
+    .then(function(json) {
+      console.log(json);
+
+      var html = nunjucks.renderString( template, json );
+      console.log( html );
+
+      var widget = document.getElementById('widget');
+      widget.innerHTML = html;
+    })
+    .catch(function(err) { console.log(err); });
+
+
+  var template = `
+  <h2>{{ name }}</h2>
+
+  {% for round in rounds %}
+     <h3>{{ round.name }}</h3>
+
+     {% for match in round.matches %}
+        <p>
+        #{{ match.num }}
+        {{ match.date }}
+        {{ match.team1.name }}
+          {% if match.score1 != null and match.score2 != null %}
+             {{ match.score1 }} - {{ match.score2 }}
+          {% else %}
+            vs
+          {% endif %}
+        {{ match.team2.name }}
+        / {{ match.group }}
+        @ {{ match.city }}
+        </p>
+     {% endfor %}
+  {% endfor %}
+`;
+
+  </script>
+</html>
