@@ -1,0 +1,40 @@
+
+ww, White Wine
+## add subfamilies e.g. White Wine Varietal, White Wine Blend/Cuvée
+
+rw, Red Wine
+## add subfamilies e.g. Red Wine Varietal, Red Wine Blend/Cuvée
+
+
+Rosé Wine   # -- what code to use ?? any conventions ???
+
+
+dw, Dessert Wine (Sweet) # -- what code to use ?? any conventions ???
+
+## add
+# [ba]
+#  Beerenauslese
+#
+# [tba]
+#   Trochenbeerenauslese
+#
+# Eiswein
+# Ausbruch
+#
+
+
+fw, Fortified Wine   # -- what code to use ?? any conventions ???
+#  add Port, Madeira, Sherry, Marsala etc.
+
+sw, Sparkling Wine  # -- what code to use ?? any conventions ???
+#  Champagne, Cava, Prosecco, etc.
+
+
+xx, Other  # -- what code to use ?? any convetion ??
+
+
+#
+#
+# todo/check:
+#  use wine color?  not the same as family in some case (is orthogonal?)
+#   e.g. for sparkling wine or dessert wine (red,rose,white possible?) - needed - why? why not? 

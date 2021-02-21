@@ -1,0 +1,35 @@
+###################################
+# White Wine Styles / Types
+
+gv, Grüner Veltliner|Weißgipfler
+wr, Welschriesling
+mt, Müller Thurgau|Rivaner
+wb, Weißburgunder|Weißer Burgunder|Pinot Blanc|Klevner
+rr, Riesling|Rheinriesling|Weißer Riesling
+ch, Chardonnay|Morillon
+sb, Sauvignon Blanc
+nb, Neuburger
+mk, Muskateller|Gelber Muskateller|Roter Muskateller
+fv, Frühroter Veltliner|Malvasier
+sr, Scheurebe|Sämling 88
+mo, Muskat-Ottonel
+tr, Traminer|Gelber Traminer|Gewürztraminer|Roter Traminer
+bo, Bouvier
+pg, Pinot Gris|Grauburgunder|Ruländer
+rv, Roter Veltliner
+gb, Goldburger
+rg, Rotgipfler
+zf, Zierfandler|Spätrot
+sv, Sylvaner|Silvaner|Grüner Sylvaner
+ju, Jubiläumsrebe
+fu, Furmint
+
+
+##################
+# what to do with non-official listed styles:
+#
+#  - kr, Kerner ???              - de.wikipedia: Kerner_(Rebsorte)
+#  - rm, Rosenmuskateller  ???   - de.wikipedia: Rosenmuskateller
+#  - se, Sémillon    ???         - de.wikipedia: Sémillon
+#  - 
+

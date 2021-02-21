@@ -1,0 +1,16 @@
+###################################
+# Red Wine Styles / Types
+
+zw, Zweigelt|Blauer Zweigelt|Rotburger
+bf, Blaufränkisch
+bp, Blauer Portugieser|Português Azul
+bb, Blauburger
+sl, St. Laurent|Sankt Laurent
+pn, Pinot Noir|Blauburgunder|Blauer Spätburgunder
+me, Merlot
+cs, Cabernet Sauvignon
+bw, Blauer Wildbacher  ## Schilcher
+ro, Roesler
+sy, Syrah|Shiraz
+cf, Cabernet Franc
+ra, Ráthay
