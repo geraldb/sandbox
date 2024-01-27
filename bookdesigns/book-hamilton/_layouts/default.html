@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ site.title }} by {{ site.author.name }}</title>
+
+    <!-- Styles and fonts -->
+    <link rel="stylesheet" href="css/style.css">
+<!--
+    <link rel="stylesheet" href="css/syntax.css">
+-->
+
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700italic,700' type='text/css'>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <script src="js/modernizr.js"></script>
+  </head>
+
+  <!-- check page_classes - needed ??? - what classes get added to body (see live example)??
+      [[ page_classes ]]
+      -->
+  <body class="index hamilton">
+
+
+    <div class="page-wrapper">
+
+      <header class="page-header" role="banner">
+        <a href="index.html" class="invisilink">
+          {% if true %}   <!-- ['index.html'].include? current_page.path -->
+            <h1 class="book-title">{{ site.title }}</h1>
+          {% else %}
+            <span class="book-title">{{ site.title }}</span>
+          {% endif %}
+        </a>
+        <span class="book-author visuallyhidden">by {{ site.author.name }}</span>
+      </header>
+
+      {{ content }}
+
+      <footer class="page-footer">
+
+        <div class="footer-wrapper clearfix" role="complementary">
+          <!--
+          <div class="block-pair clearfix">
+            <div class="block downloads">
+              <h3>Downloads</h3>
+              <p>Download this book in
+                  <a href="#">PDF</a>, <a href="#">mobi</a>, and <a href="#">epub</a>
+                form for free.
+              </p>
+            </div>
+
+            <div class="block translations">
+              <h3>Book translations</h3>
+              <p>This book is translated into
+                <a href="#">Spanish</a>
+                and <a href="#">English</a>.
+                You can help with more translations <a href="[[ data.book.github_url ]]">on Github</a>.
+              </p>
+            </div>
+          </div>
+          -->
+          <div class="block-pair clearfix">
+            <div class="block license">
+              <h3>License</h3>
+              <p>This book is dedicated to the public domain.</p>
+            </div>
+            <div class="block open-source">
+              <h3>This book is open source</h3>
+              <p>The source of this book is <a href="{{ site.github.url }}">hosted on Github</a>. Go, ahead. Check it out.</p>
+            </div>
+          </div>
+
+          <div class="small-text"><small>A Zen of Book Designs Sample</small></div>
+
+        </div><!-- end footer-wrapper -->
+
+      </footer>
+
+
+    </div><!-- end page-wrapper -->
+
+    <!-- include scripts just before the close of the body tag -->
+    <script src="js/anchor.min.js"></script>
+    <script src="js/hamilton.js"></script>
+  </body>
+</html>
+
